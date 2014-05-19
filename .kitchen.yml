@@ -1,0 +1,20 @@
+---
+driver:
+  name: docker
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: ubuntu-12.04
+
+suites:
+  - name: console
+    run_list:
+      - recipe[nexpose::default]
+    attributes:
+  - name: engine
+    run_list:
+      - recipe[nexpose::default]
+    attributes:
+      { nexpose: { component_type: 'engine' }}
