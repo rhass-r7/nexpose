@@ -1,7 +1,11 @@
 source 'https://rubygems.org'
 
 gem 'berkshelf'
-gem 'chefspec', :git => 'git://github.com/sethvargo/chefspec'
-gem 'knife-spec'
-gem 'test-kitchen'
-gem 'kitchen-docker-api'
+gem 'chefspec'
+gem 'foodcritic'
+
+group :integration do
+  gem 'test-kitchen'
+  gem 'kitchen-vagrant'
+  gem 'emeril'
+end
